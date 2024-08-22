@@ -14,5 +14,6 @@ app.set("view engine", "ejs");
 
 //middleware
 app.use("/", home);
+app.use(express.static(`${__dirname}/src/public`));
 
 module.exports = app;
