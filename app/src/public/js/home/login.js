@@ -26,7 +26,7 @@ const login = () => {
       }
     })
     .catch((err) => {
-      console.log("에러");
+      console.log("로그인에러가 발생");
     });
 };
 
