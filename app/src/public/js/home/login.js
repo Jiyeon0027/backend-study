@@ -1,7 +1,9 @@
 "use strict";
 
-const id = document.querySelector("#id");
-const password = document.querySelector("#password");
+const id = document.querySelector("form > div:nth-child(1) > input[type=text]");
+const password = document.querySelector(
+  "form > div:nth-child(2) > input[type=password]"
+);
 const loginBtn = document.querySelector("button");
 
 const login = () => {
