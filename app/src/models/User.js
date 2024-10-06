@@ -27,6 +27,11 @@ class User {
     response.msg = "로그인에 실패하셨습니다";
     return response;
   }
+
+  register() {
+    console.log(this.body);
+    return 1;
+  }
 }
 
 module.exports = User;

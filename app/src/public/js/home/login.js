@@ -1,8 +1,10 @@
 "use strict";
 
-const id = document.querySelector("form > div:nth-child(1) > input[type=text]");
+const id = document.querySelector(
+  "body > div > div > form.login-form > input[type=text]:nth-child(1)"
+);
 const password = document.querySelector(
-  "form > div:nth-child(2) > input[type=password]"
+  "body > div > div > form > input[type=password]:nth-child(2)"
 );
 const loginBtn = document.querySelector("button");
 
@@ -24,7 +26,7 @@ const login = () => {
       if (res.success) {
         location.href = "/";
       } else {
-        alert(res.msg);
+        location.href = "/register";
       }
     })
     .catch((err) => {
