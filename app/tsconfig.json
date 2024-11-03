@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es2020",
+    "moduleDetection": "auto",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "exclude": ["node_modules", "**/*.(spec|test).ts"],
+  "include": ["src/**/*", "bin"]
+}
