@@ -3,7 +3,7 @@
 import { Router } from "express";
 const router = Router();
 
-import { view, process } from "../../../controllers/home.ctrl";
+import { view } from "../../../controllers/views/viewController";
 
 router.get("/", view.home);
 router.get("/login", view.login);

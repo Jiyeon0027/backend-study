@@ -6,6 +6,6 @@ export interface UserResponse {
 
 export interface UserSchema {
   id: string;
-  password: string;
+  psword: string;
   name: string;
 }

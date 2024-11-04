@@ -9,21 +9,22 @@ class User {
   async login(): Promise<UserResponse> {
     const id = this.body.id;
     const password = this.body.password;
-    const users: UserSchema = await UserStorage.getUserInfo(id);
+
+    const users: UserSchema[] = await UserStorage.getUserInfo();
 
     const response: UserResponse = {
       success: false,
       message: "",
     };
 
-    if (users.id.includes(id)) {
-      const idx = users.id.indexOf(id);
-      if (users.password[idx] === password) {
+    for (const user of users) {
+      if (user.id === id && user.psword === password) {
         response.success = true;
+        response.message = "로그인 성공";
+        response.data = user.name;
         return response;
       }
     }
-
     response.success = false;
     response.message = "로그인에 실패하셨습니다";
     return response;

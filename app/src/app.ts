@@ -12,7 +12,12 @@ app.use(express.urlencoded({ extended: false }));
 //routing
 import home from "./routes/views/home";
 app.use("/", home);
+
+import userApiRoutes from "./routes/api/users";
+app.use("/api", userApiRoutes);
+
 app.use(express.static(`${__dirname}/public`));
+console.log(__dirname);
 
 //views
 app.set("views", "./src/views");
