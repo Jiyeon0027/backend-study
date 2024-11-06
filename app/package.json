@@ -6,7 +6,9 @@
     "build": "tsc && npm run copy-css",
     "copy-css": "copyfiles -u 1 src/public/**/*.css dist/",
     "start": "npm run build && node ./dist/loaders/www.js",
-    "dev": "concurrently 'tsc --watch' 'nodemon dist/loaders/www.js'"
+    "dev": "concurrently 'tsc --watch' 'nodemon dist/loaders/www.js'",
+    "api-docs": "swagger-cli bundle ./src/swagger/openapi.yaml --outfile src/swagger.yaml --type yaml",
+    "predev": "npm run api-docs"
   },
   "author": "jiyeon",
   "license": "MIT",
@@ -16,11 +18,17 @@
     "concurrently": "^9.0.1",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/mysql": "^2.15.26",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.7",
+    "@types/yamljs": "^0.2.34",
     "copyfiles": "^2.4.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.1",
