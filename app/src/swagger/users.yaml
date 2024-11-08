@@ -1,0 +1,8 @@
+paths:
+  /user/login:
+    post:
+      summary: login with id and password
+      responses:
+        "200":
+        dsecription: OK
+        content:

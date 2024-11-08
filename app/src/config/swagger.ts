@@ -1,16 +1,27 @@
 import path = require("path");
+import swaggerJsdoc from "swagger-jsdoc";
 
-const options = {
+const options: swaggerJsdoc.Options = {
   swaggerDefinition: {
+    openapi: "3.0.0",
     info: {
       title: "Swagger API Docs",
       version: "1.0.0",
-      description: " Swagger test document ",
+      description: " Swagger test document for backend study",
     },
     host: "localhost:3000",
     basePath: "/",
+    servers: [
+      {
+        url: "http://localhost:3000/api",
+      },
+    ],
   },
-  apis: [path.resolve(__dirname, "../routers/*.js")],
+  apis: [path.resolve(__dirname, "../routers/api/**/*.js")],
 };
 
-export default options;
+console.log(options.apis);
+
+const specs = swaggerJsdoc(options);
+
+export default specs;
